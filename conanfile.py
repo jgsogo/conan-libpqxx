@@ -6,7 +6,7 @@ from conans.errors import ConanInvalidConfiguration
 
 class LibpqxxRecipe(ConanFile):
     name = "libpqxx"
-    version = "7.0.1"
+    version = "7.0.5"
     settings = "os", "compiler", "build_type", "arch"
     description = "The official C++ client API for PostgreSQL"
     url = "https://github.com/bincrafters/conan-libpqxx"
@@ -71,7 +71,7 @@ class LibpqxxRecipe(ConanFile):
             self.options["libpq"].shared = True
 
     def source(self):
-        sha256 = "8c607ea4142223823ec400a3ff8f9561e8674e5888243cb7c6a610bf548ae0f0"
+        sha256 = "64f60d26a1ebc56fa356b9e3f18bd5b0f2ffbb0f123165ab1a5389ce0a9eeb1e"
         tools.get("{0}/archive/{1}.tar.gz".format(self.homepage, self.version), sha256=sha256)
         extracted_dir = self.name + "-" + self.version
         os.rename(extracted_dir, self._source_subfolder)
